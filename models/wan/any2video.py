@@ -753,6 +753,7 @@ class WanAny2V:
                     model_switch_step = i
                     break
             update_loras_slists(self.model, loras_slists, updated_num_steps, model_switch_step= model_switch_step)
+            if self.model2 is not None: update_loras_slists(self.model2, loras_slists, updated_num_steps, model_switch_step= model_switch_step)
             callback(-1, None, True, override_num_inference_steps = updated_num_steps)
 
         if sample_scheduler != None:
